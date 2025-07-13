@@ -5,7 +5,7 @@ const cursos = [
     nombre: "Matemática I",
     ciclo: "1er ciclo",
     creditos: 3,
-    prerequisitos: []
+    prerequisitos: ["100000X104"]
   },
   {
     codigo: "100000N07C",
@@ -40,7 +40,7 @@ const cursos = [
     nombre: "Comprensión y Redacción de Textos I",
     ciclo: "1er ciclo",
     creditos: 4,
-    prerequisitos: []
+    prerequisitos: ["100000X101"]
   },
   // 2do ciclo
   {
