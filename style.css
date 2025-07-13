@@ -90,4 +90,10 @@ h1 {
   background-color: #fff9c4; /* amarillo claro */
   border: 2px solid #fbc02d;
 }
+/* Si el curso es electivo y tachado, que gane el estilo tachado */
+.curso.electivo.tachado {
+  background-color: #c8e6c9; /* verde claro */
+  border: 2px solid #4caf50;
+  color: inherit;
+}
 
