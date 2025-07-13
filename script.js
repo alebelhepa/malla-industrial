@@ -658,6 +658,21 @@ let aprobados = JSON.parse(localStorage.getItem("cursosAprobados")) || [];
 const contenedor = document.getElementById("malla");
 const ciclosUnicos = [...new Set(cursos.map(c => c.ciclo))];
 
+// Desmarcar recursivamente todos los cursos que dependan de un curso desmarcado
+function desmarcarHijos(codigoPadre) {
+  // Buscamos todos los cursos que tienen este como prerrequisito
+  cursos.forEach(curso => {
+    if (curso.prerequisitos.includes(codigoPadre)) {
+      if (aprobados.includes(curso.codigo)) {
+        // Si estaba marcado, lo quitamos
+        aprobados = aprobados.filter(c => c !== curso.codigo);
+        // Y repetimos recursivamente con sus hijos
+        desmarcarHijos(curso.codigo);
+      }
+    }
+  });
+}
+
 function renderizar() {
   contenedor.innerHTML = "";
   ciclosUnicos.forEach(ciclo => {
@@ -673,8 +688,10 @@ function renderizar() {
 
         const divCurso = document.createElement("div");
         divCurso.className = "curso";
+
+        // Si es electivo, color diferente
         if (curso.tipo === "electivo") {
-        divCurso.classList.add("electivo");
+          divCurso.classList.add("electivo");
         }
 
         // Estado visual
@@ -697,11 +714,14 @@ function renderizar() {
           </div>
         `;
 
-        // Evento click: sólo si está desbloqueado
+        // Evento click: solo si desbloqueado
         if (desbloqueado) {
           divCurso.addEventListener("click", () => {
             if (aprobados.includes(curso.codigo)) {
+              // Desmarcar este
               aprobados = aprobados.filter(c => c !== curso.codigo);
+              // Desmarcar todos los hijos
+              desmarcarHijos(curso.codigo);
             } else {
               aprobados.push(curso.codigo);
             }
@@ -710,7 +730,7 @@ function renderizar() {
           });
         }
 
-        // Eventos de tooltip
+        // Tooltip
         divCurso.addEventListener("mouseenter", () => {
           divCurso.querySelector(".tooltip").style.display = "block";
         });
@@ -724,7 +744,6 @@ function renderizar() {
     contenedor.appendChild(divCiclo);
   });
 }
-
 
 // Primera renderización
 renderizar();
