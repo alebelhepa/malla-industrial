@@ -86,4 +86,8 @@ h1 {
   pointer-events: none;
   border: 2px dashed #ccc;
 }
+.curso.electivo {
+  background-color: #fff9c4; /* amarillo claro */
+  border: 2px solid #fbc02d;
+}
 
