@@ -29,21 +29,6 @@ const cursos = [
     creditos: 3,
     prerequisitos: []
   },
-  // 1er ciclo
-  {
-    codigo: "100000I0N2",
-    nombre: "Matemática I",
-    ciclo: "1er ciclo",
-    creditos: 3,
-    prerequisitos: ["100000X104"]
-  },
-  {
-    codigo: "100000N07C",
-    nombre: "Ciudadanía y Reflexión Ética",
-    ciclo: "1er ciclo",
-    creditos: 3,
-    prerequisitos: []
-  },
   {
     codigo: "100000IN06",
     nombre: "Introducción a la Ingeniería Industrial",
