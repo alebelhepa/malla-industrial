@@ -54,4 +54,36 @@ h1 {
   width: 200px;
   z-index: 10;
 }
+.curso {
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #e3f2fd; /* celeste por defecto */
+  border: 2px solid #90caf9;
+}
+
+.curso:hover {
+  transform: scale(1.05);
+  background-color: #bbdefb;
+}
+
+.curso.tachado {
+  background-color: #c8e6c9; /* verde claro */
+  text-decoration: line-through;
+  opacity: 0.9;
+  border: 2px solid #4caf50;
+}
+
+.curso.bloqueado {
+  background-color: #eeeeee;
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+  border: 2px dashed #ccc;
+}
 
