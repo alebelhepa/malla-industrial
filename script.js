@@ -626,3 +626,7 @@ function renderizar() {
     contenedor.appendChild(divCiclo);
   });
 }
+
+
+// Primera renderización
+renderizar();
