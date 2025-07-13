@@ -1,4 +1,19 @@
 const cursos = [
+  // Ciclo 0 - Nivelación
+  {
+  codigo: "100000X104",
+  nombre: "NIVELACIÓN DE MATEMÁTICA",
+  ciclo: "0 - Nivelación",
+  creditos: 0,
+  prerequisitos: []
+  },
+  {
+  codigo: "100000X101",
+  nombre: "NIVELACIÓN DE REDACCIÓN",
+  ciclo: "0 - Nivelación",
+  creditos: 0,
+  prerequisitos: []
+  },
   // 1er ciclo
   {
     codigo: "100000I0N2",
