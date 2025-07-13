@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background: #f5f5f5;
+}
+h1 {
+  text-align: center;
+}
+.ciclo {
+  margin: 20px 0;
+}
+.ciclo h2 {
+  background: #333;
+  color: #fff;
+  padding: 8px;
+}
+.curso {
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.curso:hover {
+  transform: scale(1.05);
+  background: #e0f7fa;
+}
+.curso.tachado {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: #333;
+  color: #fff;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  width: 200px;
+  z-index: 10;
+}
+.curso {
+  display: inline-block;
+  width: 220px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #e3f2fd; /* celeste por defecto */
+  border: 2px solid #90caf9;
+}
+
+.curso:hover {
+  transform: scale(1.05);
+  background-color: #bbdefb;
+}
+
+.curso.tachado {
+  background-color: #c8e6c9; /* verde claro */
+  text-decoration: line-through;
+  opacity: 0.9;
+  border: 2px solid #4caf50;
+}
+
+.curso.bloqueado {
+  background-color: #eeeeee;
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+  border: 2px dashed #ccc;
+}
