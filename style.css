@@ -8,39 +8,80 @@ h1 {
   text-align: center;
 }
 
+/* Contenedor de todos los ciclos */
+#malla {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+/* Cada ciclo como columna */
 .ciclo {
-  margin: 20px 0;
+  min-width: 250px;
+  flex: 0 0 auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f5f5f5;
 }
 
 .ciclo h2 {
   background: #333;
   color: #fff;
   padding: 8px;
+  margin-top: 0;
 }
 
+/* Cursos desbloqueados */
 .curso {
-  display: inline-block;
-  width: 220px;
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
-  background: #fff;
-  border: 1px solid #ccc;
   border-radius: 6px;
   position: relative;
   cursor: pointer;
   transition: transform 0.2s;
+  background-color: #e3f2fd; /* celeste por defecto */
+  border: 2px solid #90caf9;
 }
 
+/* Hover en cursos desbloqueados */
 .curso:hover {
   transform: scale(1.05);
-  background: #e0f7fa;
+  background-color: #bbdefb;
 }
 
+/* Cursos marcados como aprobados */
 .curso.tachado {
+  background-color: #c8e6c9; /* verde claro */
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.9;
+  border: 2px solid #4caf50;
 }
 
+/* Cursos bloqueados (no desbloqueados aún) */
+.curso.bloqueado {
+  background-color: #eeeeee;
+  color: #aaa;
+  cursor: default;
+  pointer-events: none;
+  border: 2px dashed #ccc;
+}
+
+/* Cursos electivos */
+.curso.electivo {
+  background-color: #fff9c4; /* amarillo claro */
+  border: 2px solid #fbc02d;
+}
+
+/* Cursos electivos aprobados */
+.curso.electivo.tachado {
+  background-color: #c8e6c9; /* verde claro */
+  border: 2px solid #4caf50;
+  color: inherit;
+}
+
+/* Tooltip */
 .tooltip {
   display: none;
   position: absolute;
@@ -54,65 +95,5 @@ h1 {
   width: 200px;
   z-index: 10;
 }
-.curso {
-  display: inline-block;
-  width: 220px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 6px;
-  position: relative;
-  cursor: pointer;
-  transition: transform 0.2s;
-  background-color: #e3f2fd; /* celeste por defecto */
-  border: 2px solid #90caf9;
-}
 
-.curso:hover {
-  transform: scale(1.05);
-  background-color: #bbdefb;
-}
-
-.curso.tachado {
-  background-color: #c8e6c9; /* verde claro */
-  text-decoration: line-through;
-  opacity: 0.9;
-  border: 2px solid #4caf50;
-}
-
-.curso.bloqueado {
-  background-color: #eeeeee;
-  color: #aaa;
-  cursor: default;
-  pointer-events: none;
-  border: 2px dashed #ccc;
-}
-.curso.electivo {
-  background-color: #fff9c4; /* amarillo claro */
-  border: 2px solid #fbc02d;
-}
-/* Si el curso es electivo y tachado, que gane el estilo tachado */
-.curso.electivo.tachado {
-  background-color: #c8e6c9; /* verde claro */
-  border: 2px solid #4caf50;
-  color: inherit;
-#malla {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px;
-}
-.ciclo {
-  min-width: 250px;
-  flex: 0 0 auto;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  background: #f5f5f5;
-}
-.curso {
-  margin: 5px 0;
-  padding: 5px;
-  background: #e3f2fd;
-  border-radius: 4px;
-}
 
